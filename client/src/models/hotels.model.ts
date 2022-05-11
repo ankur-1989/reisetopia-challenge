@@ -7,7 +7,7 @@ interface TranslatedAttribute {
 
 export interface Deal {
   expireTime: string;
-  headLine: TranslatedAttribute;
+  headline: TranslatedAttribute;
   details: TranslatedAttribute;
 }
 

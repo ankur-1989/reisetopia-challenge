@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "./deals.css";
 import { HTTP_STATUS } from "../../app/constants";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
@@ -8,6 +8,7 @@ import Loader from "../../components/Loader/Loader.component";
 import ImageContainer from "../../components/ImageContainer/ImageContainer.component";
 import starIcon from "../../images/staricon.svg";
 import Slider from "../../components/Slider/Slider.component";
+import DealDetails from "./DealDetails";
 
 export default function Deals() {
   const dispatch = useAppDispatch();
@@ -29,7 +30,10 @@ export default function Deals() {
     };
   });
   return fetchStatus === HTTP_STATUS.FULFILLED ? (
-    <Slider slides={slides} />
+    <>
+      <Slider slides={slides} />
+      <DealDetails />
+    </>
   ) : (
     <Loader />
   );

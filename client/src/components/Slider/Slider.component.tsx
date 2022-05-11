@@ -17,14 +17,16 @@ interface SliderProps {
 }
 
 export default function Slider({ slides }: SliderProps) {
-  const { goToSlide, setGoToSlide } = useBetween(useCurrentHotel);
+  const { goToSlide, setGoToSlide, setHotelId } = useBetween(useCurrentHotel);
 
   const gotoPreviousSlide = () => {
     setGoToSlide(goToSlide === 0 ? slides.length - 1 : goToSlide - 1);
+    setHotelId(slides[goToSlide - 1].key);
   };
 
   const gotoNextSlide = () => {
     setGoToSlide(goToSlide === slides.length - 1 ? 0 : goToSlide + 1);
+    setHotelId(slides[goToSlide + 1].key);
   };
 
   return (

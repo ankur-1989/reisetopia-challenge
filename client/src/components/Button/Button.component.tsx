@@ -1,14 +1,13 @@
-import * as CSS from "csstype";
 import "./button.component.css";
 interface ButtonProps {
   title: string;
   onClick: () => void;
-  style: CSS.Properties;
+  className?: string;
 }
 
-export default function Button({ title, onClick, style }: ButtonProps) {
+export default function Button({ title, onClick, className }: ButtonProps) {
   return (
-    <button className="button" onClick={onClick} style={style}>
+    <button className={`button ${className}`} onClick={onClick}>
       {title}
     </button>
   );
