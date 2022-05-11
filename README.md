@@ -26,4 +26,8 @@ We can use swagger api to create the documentation to better understand the api 
 
 May be, we can try caching to improve the performance by saving the results in cache.
 
+## front-end
 
+To run the application
+
+`yarn start`
