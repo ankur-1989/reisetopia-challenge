@@ -1,5 +1,5 @@
 import * as CSS from "csstype";
-
+import "./button.component.css";
 interface ButtonProps {
   title: string;
   onClick: () => void;
