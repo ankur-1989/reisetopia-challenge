@@ -7,8 +7,13 @@ import IconButton from "../IconButton/IconButton.component";
 import { useCurrentHotel } from "../../hooks/useCurrentHotel";
 import { useBetween } from "use-between";
 
+interface Slide {
+  key: number;
+  content: JSX.Element;
+}
+
 interface SliderProps {
-  slides: React.ReactNode[];
+  slides: Slide[];
 }
 
 export default function Slider({ slides }: SliderProps) {

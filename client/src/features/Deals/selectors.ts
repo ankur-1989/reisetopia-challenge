@@ -3,6 +3,10 @@ import { createSelector } from "@reduxjs/toolkit";
 
 export const getAllHotels = (state: RootState) => state.hotelsList.hotels;
 
+export const getFirstFiveHotels = createSelector(getAllHotels, (hotels) =>
+  hotels.slice(0, 5)
+);
+
 export const getFetchStatus = (state: RootState) => state.hotelsList.status;
 
 const selectHotelId = (state: RootState, hotelId: number) => hotelId;
